@@ -3,7 +3,7 @@
 # ============================================================
 
 # Compiled output
-backend/target/
+abacatepay-spring-demo/target/
 *.class
 *.jar
 *.war
@@ -18,10 +18,15 @@ backend/target/
 # Gradle (caso use)
 .gradle/
 build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 !gradle/wrapper/gradle-wrapper.jar
 
 # Spring Boot DevTools
 .spring-boot-devtools.properties
+
+# Spring Initializr
+HELP.md
 
 # Logs
 logs/
@@ -29,23 +34,43 @@ logs/
 *.log.*
 spring.log
 
+# Annotation processors (Lombok, MapStruct, etc.)
+.apt_generated
+.factorypath
+
 # ============================================================
 #  ANGULAR / NODE
 # ============================================================
 
 # Dependencies
-frontend/node_modules/
 node_modules/
 
 # Build output
-frontend/dist/
-frontend/.angular/cache/
+dist/
+tmp/
+out-tsc/
+bazel-out/
 
 # Angular cache
 .angular/
 
+# Sass cache
+.sass-cache/
+
+# Test artifacts
+coverage/
+__screenshots__/
+testem.log
+typings/
+
+# Misc Angular CLI artifacts
+connect.lock
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+
 # Environment files (gerencie via CI/CD ou cofre de segredos)
-frontend/src/environments/environment.prod.ts
+front-abacatepay-demo/src/environments/environment.prod.ts
 
 # ============================================================
 #  IDEs
@@ -63,16 +88,27 @@ out/
 !.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/mcp.json
+.history/
 
 # Eclipse / STS
 .classpath
 .project
 .settings/
 .sts4-cache/
+.springBeans
+*.launch
 
 # NetBeans
 nbproject/
 nb-configuration.xml
+
+# Cloud9
+.c9/
+
+# Sublime Text
+*.sublime-workspace
 
 # ============================================================
 #  SISTEMA OPERACIONAL
@@ -122,33 +158,23 @@ application-secrets.properties
 #  DOCKER
 # ============================================================
 
-# Ignorar overrides locais, mas versionar os principais
 docker-compose.override.yml
 
 # ============================================================
 #  TESTES / COBERTURA
 # ============================================================
 
-# JaCoCo
-backend/target/site/jacoco/
-
 # Istanbul / nyc (Angular)
-frontend/coverage/
 .nyc_output/
 
 # ============================================================
 #  MISC
 # ============================================================
 
-# Arquivos temporários
 *.tmp
 *.temp
 *.swp
 *.swo
-
-# Patch files
 *.patch
 *.diff
-
-# Pack files
 *.pack
