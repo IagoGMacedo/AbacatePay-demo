@@ -1,28 +1,154 @@
-# Angular specific
-/dist/
-/out-tsc/
-/tmp/
-/coverage/
-/e2e/test-output/
-/.angular/
-.angular/
+# ============================================================
+#  JAVA / SPRING BOOT
+# ============================================================
 
-# Node modules and dependency files
-/node_modules/
-/package-lock.json
-/yarn.lock
+# Compiled output
+backend/target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
 
-# Environment files
-/.env
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Angular CLI and build artefacts
-/.angular-cli.json
-/.ng/
+# Gradle (caso use)
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
 
-# TypeScript cache
-*.tsbuildinfo
+# Spring Boot DevTools
+.spring-boot-devtools.properties
 
 # Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+logs/
+*.log
+*.log.*
+spring.log
+
+# ============================================================
+#  ANGULAR / NODE
+# ============================================================
+
+# Dependencies
+frontend/node_modules/
+node_modules/
+
+# Build output
+frontend/dist/
+frontend/.angular/cache/
+
+# Angular cache
+.angular/
+
+# Environment files (gerencie via CI/CD ou cofre de segredos)
+frontend/src/environments/environment.prod.ts
+
+# ============================================================
+#  IDEs
+# ============================================================
+
+# IntelliJ IDEA / JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+
+# Eclipse / STS
+.classpath
+.project
+.settings/
+.sts4-cache/
+
+# NetBeans
+nbproject/
+nb-configuration.xml
+
+# ============================================================
+#  SISTEMA OPERACIONAL
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ============================================================
+#  SEGREDOS E CONFIGURAÇÕES LOCAIS
+# ============================================================
+
+# Nunca commite segredos!
+*.env
+.env
+.env.*
+!.env.example
+application-local.yml
+application-local.properties
+application-secrets.yml
+application-secrets.properties
+
+# Certificados e chaves
+*.pem
+*.p12
+*.jks
+*.keystore
+*.pfx
+*.key
+*.crt
+*.cer
+
+# ============================================================
+#  DOCKER
+# ============================================================
+
+# Ignorar overrides locais, mas versionar os principais
+docker-compose.override.yml
+
+# ============================================================
+#  TESTES / COBERTURA
+# ============================================================
+
+# JaCoCo
+backend/target/site/jacoco/
+
+# Istanbul / nyc (Angular)
+frontend/coverage/
+.nyc_output/
+
+# ============================================================
+#  MISC
+# ============================================================
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Patch files
+*.patch
+*.diff
+
+# Pack files
+*.pack
